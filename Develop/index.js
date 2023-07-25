@@ -41,7 +41,24 @@ function writeToFile(fileName, data) {
         name: "credit",
       },
     ])
-    .then((response) => fs.appendFile("README.md"));
+    .then((response) =>
+      fs.writeFile(
+        "./output/README.md",
+        `# ${response.title}
+
+## Description
+${response.description}
+## Table of contents
+
+## Installation
+${response.install}
+## Usage
+${response.usage}
+## Credits
+${response.credit}
+## License`
+      )
+    );
 }
 
 // TODO: Create a function to initialize app
