@@ -2,67 +2,68 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 let input = "input";
+const generateMarkdown = require("./utils/generateMarkdown");
+
 // TODO: Create an array of questions for user input
 const questions = [
-  "What is the title of your Project?",
-  "Please provide a description for your project.",
-  "What are the steps to install your project?",
-  "How do you use your project?",
-  "Please provide any additional credit.",
+  {
+    type: input,
+    message: "What is the title of your Project?",
+    name: "title",
+  },
+  {
+    type: input,
+    message: "Please provide a description for your project.",
+    name: "description",
+  },
+  {
+    type: input,
+    message: "What are the steps to install your project?",
+    name: "install",
+  },
+  {
+    type: input,
+    message: "How do you use your project?",
+    name: "usage",
+  },
+  {
+    type: input,
+    message: "Please provide any additional credit.",
+    name: "credit",
+  },
+  {
+    type: "list",
+    message: "Please choose a license.",
+    name: "license",
+    choices: ["MIT", "Apache", "ISC", "BSD-3", "BSD-2", "Creative Commons"],
+  },
+  {
+    type: "confirm",
+    message: "Would you like to add a table of contents?",
+    name: "contents",
+  },
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  inquirer
-    .prompt([
-      {
-        type: input,
-        message: questions[0],
-        name: "title",
-      },
-      {
-        type: input,
-        message: questions[1],
-        name: "description",
-      },
-      {
-        type: input,
-        message: questions[2],
-        name: "install",
-      },
-      {
-        type: input,
-        message: questions[3],
-        name: "usage",
-      },
-      {
-        type: input,
-        message: questions[4],
-        name: "credit",
-      },
-    ])
-    .then((response) =>
-      fs.writeFile(
-        "./output/README.md",
-        `# ${response.title}
-
-## Description
-${response.description}
-## Table of contents
-
-## Installation
-${response.install}
-## Usage
-${response.usage}
-## Credits
-${response.credit}
-## License`
-      )
-    );
+  fs.writeFile(fileName, data, (err) => {
+    if (err) {
+      console.error(err);
+    }
+  });
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+async function init() {
+  try {
+    const userInput = await inquirer.prompt(questions);
+    const finalREADME = generateMarkdown(userInput);
+    writeToFile("./output/README.md", finalREADME);
+    console.log("Success!");
+  } catch (err) {
+    console.log("There was an error.");
+  }
+}
 
 // Function call to initialize app
 init();
