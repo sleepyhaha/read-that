@@ -55,41 +55,43 @@ ${data.description}
     `;
 
   let tableOfContents = `
-  ## Table of Contents
-        - [Installation](#installation)
-        - [Usage](#usage)
-        - [Credits](#credits)
-        - [License](#license)`;
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+`;
 
   if (data.contents == true) {
     markdownTemplate += tableOfContents;
   }
 
   let installSection = `
-  ## Installation
+## <a name="installation"></a> Installation
 
-  ${data.install}
+${data.install}
   `;
   markdownTemplate += installSection;
 
   let usageSection = `
-  ## Usage
+## <a name="usage"></a> Usage
 
-  ${data.usage}
+${data.usage}
   `;
   markdownTemplate += usageSection;
 
   let creditSection = `
-  ## Credits
+## <a name="credits"></a> Credits
 
-  ${data.credit}
+${data.credit}
   `;
   markdownTemplate += creditSection;
 
   let licenseSection = `
-  ## License
+## <a name="license"></a> License
   
-  Licensed under the ${licenseChosen} license.`;
+Licensed under the ${licenseChosen} license.`;
   markdownTemplate += licenseSection;
 
   return markdownTemplate;
