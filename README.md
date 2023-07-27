@@ -6,6 +6,8 @@
 
 This app runs generates a formatted README for you based on question prompts so that you don't have to do it all yourself. It contains all the standard sections that are usually found within a professional README and can be re-used at will for every project. It runs in the terminal and makes creating README's relatively brainless.
 
+Here is the video link for the example: https://watch.screencastify.com/v/holQUaymUDGt1efV4X4W
+
 ## Table of Contents
 
 - [Installation](#installation)
