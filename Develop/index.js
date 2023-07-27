@@ -38,6 +38,26 @@ const questions = [
     choices: ["MIT", "Apache", "ISC", "BSD-3", "BSD-2", "Creative Commons"],
   },
   {
+    type: input,
+    message: "Are there any tests?",
+    name: "test",
+  },
+  {
+    type: input,
+    message: "Please add any contributors.",
+    name: "contribute",
+  },
+  {
+    type: input,
+    message: "Enter your GitHub username.",
+    name: "github",
+  },
+  {
+    type: input,
+    message: "Please enter your email.",
+    name: "email",
+  },
+  {
     type: "confirm",
     message: "Would you like to add a table of contents?",
     name: "contents",
