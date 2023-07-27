@@ -44,8 +44,8 @@ const questions = [
   },
   {
     type: input,
-    message: "Please add any contributors.",
-    name: "contributors",
+    message: "Please add any contribution steps.",
+    name: "contributing",
   },
   {
     type: input,

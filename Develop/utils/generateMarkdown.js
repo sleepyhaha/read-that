@@ -59,6 +59,9 @@ ${data.description}
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Tests](#test)
+- [Contributing](#contributing)
+- [Questions](#questions)
 - [Credits](#credits)
 - [License](#license)
 `;
@@ -89,7 +92,7 @@ ${data.test}
   markdownTemplate += testSection;
 
   let contributorsSection = `
-  ## <a name="contributors"></a> Contributors
+  ## <a name="contributing"></a> Contributing
   
   ${data.contributors}
   `;
