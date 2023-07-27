@@ -1,17 +1,6 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  // license badge rendering function. displays badge at top of README based on the license chosen
+
   let licenseChosen = `${data.license}`;
   let licenseBadge = "";
 
@@ -44,6 +33,8 @@ function generateMarkdown(data) {
     licenseBadge =
       "[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)";
   }
+
+  // template for README begins here.
 
   let markdownTemplate = `# ${data.title}
 
@@ -101,7 +92,7 @@ ${data.test}
   let questionSection = `
   ## <a name="questions"></a> Questions
   
-  For more information, head to ${data.github}.
+  For more information, head to https://github.com/${data.github}.
   Or if you have any questions, contact me at ${data.email}.
   `;
   markdownTemplate += questionSection;
