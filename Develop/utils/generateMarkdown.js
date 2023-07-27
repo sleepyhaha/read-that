@@ -81,6 +81,28 @@ ${data.usage}
   `;
   markdownTemplate += usageSection;
 
+  let testSection = `
+## <a name="test"></a> Tests
+
+${data.test}
+`;
+  markdownTemplate += testSection;
+
+  let contributorsSection = `
+  ## <a name="contributors"></a> Contributors
+  
+  ${data.contributors}
+  `;
+  markdownTemplate += contributorsSection;
+
+  let questionSection = `
+  ## <a name="questions"></a> Questions
+  
+  For more information, head to ${data.github}.
+  Or if you have any questions, contact me at ${data.email}.
+  `;
+  markdownTemplate += questionSection;
+
   let creditSection = `
 ## <a name="credits"></a> Credits
 

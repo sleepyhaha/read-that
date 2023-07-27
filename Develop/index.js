@@ -39,13 +39,13 @@ const questions = [
   },
   {
     type: input,
-    message: "Are there any tests?",
+    message: "How do you test your app?",
     name: "test",
   },
   {
     type: input,
     message: "Please add any contributors.",
-    name: "contribute",
+    name: "contributors",
   },
   {
     type: input,
