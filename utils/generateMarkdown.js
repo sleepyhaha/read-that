@@ -83,18 +83,18 @@ ${data.test}
   markdownTemplate += testSection;
 
   let contributorsSection = `
-  ## <a name="contributing"></a> Contributing
+ ## <a name="contributing"></a> Contributing
   
-  ${data.contributors}
-  `;
+${data.contributing}
+`;
   markdownTemplate += contributorsSection;
 
   let questionSection = `
-  ## <a name="questions"></a> Questions
+## <a name="questions"></a> Questions
   
-  For more information, head to https://github.com/${data.github}.
-  Or if you have any questions, contact me at ${data.email}.
-  `;
+For more information, head to https://github.com/${data.github}.
+Or if you have any questions, contact me at ${data.email}.
+`;
   markdownTemplate += questionSection;
 
   let creditSection = `
