@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 let input = "input";
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// TODO: Create an array of questions for user input
+// Array of questions for inquirer.prompt
+
 const questions = [
   {
     type: input,
@@ -64,7 +64,8 @@ const questions = [
   },
 ];
 
-// TODO: Create a function to write README file
+// the function to write answers into template and then into a file.
+
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
     if (err) {
@@ -73,7 +74,8 @@ function writeToFile(fileName, data) {
   });
 }
 
-// TODO: Create a function to initialize app
+// initialization function running async. Runs prompt and then once thats finished, puts the answers into the template and write to designated path using writeToFile function.
+
 async function init() {
   try {
     const userInput = await inquirer.prompt(questions);
